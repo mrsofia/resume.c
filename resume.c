@@ -29,108 +29,93 @@ typedef thing_t project_t;
 #define CURRENT 0 /* I wasn't alive at the Unix epoch, so that'll work */
 
 /* Contact Information */
-const char * name    = "Kevin R. Lange";
-const char * email   = "klange@toaruos.org";
-const char * address = "1045 Mission St, Apt 440\n"
-                       "San Francisco, CA 94103";
+const char * name    = "Justin D. Sofia";
+const char * email   = "justin.sofia@gmail.com";
+const char * address = "3111 Parker Ln, Apt 188\n"
+                       "Austin, TX 78741";
 
 					   /* Education */
-					   school_t uiuc = {
-							   	.school   = "University of Illinois at Urbana-Champaign",
-									.location = "Urbana, IL",
-										.program  = "BS Computer Science",
-											.started  = 1251158400,
-												.left     = 1336608000,
+					   school_t ut = {
+							   	.school   = "The University of Texas at Austin",
+									.location = "Austin, TX",
+										.program  = "BBA Finance",
+											.started  = 1314248400,
+												.left     = 1431234000,
 													.description = {
-																	"Minor in International Studies in Engineering, Japan",
-																			"Focused on systems software courses",
+																	"Minor studies in Computer Science",
 																					NULL
 																								}
 					   };
 
-school_t hit = {
-			.school   = "Hiroshima Institute of Technology",
-				.location = "Hiroshima, Japan",
-					.program  = "Study Abroad",
-						.started  = 1274745600,
-							.left     = 1278288000,
-								.description = {
-												"Cultural exchange program",
-														"Intensive language course",
-																NULL
-																			}
-};
-
 school_t * schools[] = {
-			&uiuc,
-				&hit,
+			&ut,
 					NULL
 };
 
 /* Projects */
-project_t compiz = {
-			.project = "Compiz Window Manager",
-				.url     = "http://compiz.org",
-					.title   = "Developer",
-						.started = 1201392000,
-							.left    = 1264291200,
+project_t connect_four_AI = {
+			.project = "Connect Four AI",
+				.url     = "not yet public",
+					.title   = "Lead",
+						.started = 1447567200,
+							.left    = CURRENT,
 								.description = {
-												"Minor plugin contributor",
-														"Various research projects",
+												"Implementing AI algorithms in Python implementation of Connect Four to learn AI fundamentals",
 																NULL
 																			}
 };
 
-project_t toaruos = {
-			.project = "ToAruOS",
-				.url     = "https://github.com/klange/toaruos",
+project_t jdos = {
+			.project = "jdOS",
+				.url     = "not yet public",
 					.title   = "Lead",
-						.started = 1295049600,
+						.started = 1449036000,
 							.left    = CURRENT,
 								.description = {
-												"Hobby x86 Unix-like kernel and userspace",
-														"Advanced in-house GUI with compositing window manager",
+												"x64 Unix-like OS as platform for learning operating system concepts",
 																NULL
 																			}
 };
 
 project_t * projects[] = {
-			&toaruos,
-				&compiz,
+			&connect_four_AI,
+				&jdos,
 					NULL
 };
 
 /* Employment History */
 
-job_t yelp = {
-			.company  = "Yelp, Inc.",
-				.location = "San Francisco, CA",
-					.title    = "Software Engineer, i18n",
-						.started  = 1339977600,
-							.left     = CURRENT,
+job_t dimeSocial = {
+			.company  = "dimeSocial, Inc.",
+				.location = "Austin, TX",
+					.title    = "Backend Engineer",
+						.started  = 1434776400,
+							.left     = 1449727200,
 								.description = {
-												"Developed several internal tools and libraries",
-														"Provided critical input and design work for Yelp's launch in Japan",
+												"Designed and built initial backend in MySQL and PHP, rewrote backend with Django REST Framework",
+													"Created and implemented code review and deployment practices",
+														"Built and managed application infrastructure with Amazon Web Services",
+															"Provided critical input, strategy advice, and pitch coaching for dimeSocial's launch",
 																NULL
 																			}
 };
 
-job_t apple_internship = {
-			.company  = "Apple Inc.",
-				.location = "Cupertino, CA",
-					.title    = "Software Engineering Intern",
-						.started  = 1306886400,
-							.left     = 1314662400,
+job_t capital_factory = {
+			.company  = "Capital Factory",
+				.location = "Austin, TX",
+					.title    = "Venture Intern",
+						.started  = 1407646800,
+							.left     = 1430542800,
 								.description = {
-												"Built software framework for testing and verification of desktop retina display modes",
-														"Assisted other interns with Unix fundamentals",
+												"Evaluated applications to Accelerator program and interviewed companies with strong potential",
+														"Identified several startups, mentors, and investors, and invited them to our Accelerator program",
 																NULL
 																			}
 };
 
 job_t * jobs[] = {
-			&yelp,
-				&apple_internship,
+			&dimeSocial,
+				&capital_factory,
 					NULL
 };
 
