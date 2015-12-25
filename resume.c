@@ -34,139 +34,139 @@ const char * email   = "justin.sofia@gmail.com";
 const char * address = "3111 Parker Ln, Apt 188\n"
                        "Austin, TX 78741";
 
-					   /* Education */
-					   school_t ut = {
-							   	.school   = "The University of Texas at Austin",
-									.location = "Austin, TX",
-										.program  = "BBA Finance",
-											.started  = 1314248400,
-												.left     = 1431234000,
-													.description = {
-																	"Minor studies in Computer Science",
-																					NULL
-																								}
-					   };
+/* Education */
+school_t ut = {
+   	.school   = "The University of Texas at Austin",
+		.location = "Austin, TX",
+			.program  = "BBA Finance",
+				.started  = 1314248400,
+					.left     = 1431234000,
+						.description = {
+										"Minor studies in Computer Science",
+														NULL
+																	}
+};
 
 school_t * schools[] = {
-			&ut,
-					NULL
+	&ut,
+		NULL
 };
 
 /* Projects */
 project_t connect_four_AI = {
-			.project = "Connect Four AI",
-				.url     = "not yet public",
-					.title   = "Lead",
-						.started = 1447567200,
-							.left    = CURRENT,
-								.description = {
-												"Implementing AI algorithms in Python implementation of Connect Four to learn AI fundamentals",
-																NULL
-																			}
+	.project = "Connect Four AI",
+	.url     = "not yet public",
+	.title   = "Lead",
+	.started = 1447567200,
+	.left    = CURRENT,
+	.description = {
+		"Implementing AI algorithms in Python implementation of Connect Four to learn AI fundamentals",
+		NULL
+	}
 };
 
 project_t jdos = {
-			.project = "jdOS",
-				.url     = "not yet public",
-					.title   = "Lead",
-						.started = 1449036000,
-							.left    = CURRENT,
-								.description = {
-												"x64 Unix-like OS as platform for learning operating system concepts",
-																NULL
-																			}
+	.project = "jdOS",
+	.url     = "not yet public",
+	.title   = "Lead",
+	.started = 1449036000,
+	.left    = CURRENT,
+	.description = {
+		"x64 Unix-like OS as platform for learning operating system concepts",
+		NULL
+	}
 };
 
 project_t * projects[] = {
-			&connect_four_AI,
-				&jdos,
-					NULL
+	&connect_four_AI,
+	&jdos,
+	NULL
 };
 
 /* Employment History */
 
 job_t dimeSocial = {
-			.company  = "dimeSocial, Inc.",
-				.location = "Austin, TX",
-					.title    = "Backend Engineer",
-						.started  = 1434776400,
-							.left     = 1449727200,
-								.description = {
-												"Designed and built initial backend in MySQL and PHP, rewrote backend with Django REST Framework",
-													"Created and implemented code review and deployment practices",
-														"Built and managed application infrastructure with Amazon Web Services",
-															"Provided critical input, strategy advice, and pitch coaching for dimeSocial's launch",
-																NULL
-																			}
+	.company  = "dimeSocial, Inc.",
+	.location = "Austin, TX",
+	.title    = "Backend Engineer",
+	.started  = 1434776400,
+	.left     = 1449727200,
+	.description = {
+		"Designed and built initial backend in MySQL and PHP, rewrote backend with Django REST Framework",
+		"Created code review and deployment practices",
+		"Built and managed application infrastructure with Amazon Web Services",
+		"Provided critical input, strategy advice, and pitch coaching for dimeSocial's launch",
+		NULL
+	}
 };
 
 job_t capital_factory = {
-			.company  = "Capital Factory",
-				.location = "Austin, TX",
-					.title    = "Venture Intern",
-						.started  = 1407646800,
-							.left     = 1430542800,
-								.description = {
-												"Evaluated applications to Accelerator program and interviewed companies with strong potential",
-														"Identified several startups, mentors, and investors, and invited them to our Accelerator program",
-																NULL
-																			}
+	.company  = "Capital Factory",
+	.location = "Austin, TX",
+	.title    = "Venture Intern",
+	.started  = 1407646800,
+	.left     = 1430542800,
+	.description = {
+		"Evaluated applications to Accelerator program and interviewed companies with strong potential",
+		"Identified several startups, mentors, and investors, and invited them to our Accelerator program",
+		NULL
+	}
 };
 
 job_t * jobs[] = {
-			&dimeSocial,
-				&capital_factory,
-					NULL
+	&dimeSocial,
+	&capital_factory,
+	NULL
 };
 
 void print_thing(thing_t * thing) {
-			char started[100];
-				char left[100];
-					struct tm * ti;
+	char started[100];
+	char left[100];
+	struct tm * ti;
 
-						printf("%s at %s - %s\n", thing->title, thing->company, thing->location);
+	printf("%s at %s - %s\n", thing->title, thing->company, thing->location);
 
-							ti = localtime(&thing->started);
-								strftime(started, sizeof(started), "%B %d, %Y", ti);
+	ti = localtime(&thing->started);
+	strftime(started, sizeof(started), "%B %d, %Y", ti);
 
-									if (thing->left == CURRENT)  {
-													printf("%s to now\n", started);
-														} else {
-																		ti = localtime(&thing->left);
-																				strftime(left, sizeof(left), "%B %d, %Y", ti);
-																						printf("%s to %s\n", started, left);
-																							}
+	if (thing->left == CURRENT)  {
+		printf("%s to now\n", started);
+	} else {
+	ti = localtime(&thing->left);
+	strftime(left, sizeof(left), "%B %d, %Y", ti);
+	printf("%s to %s\n", started, left);
+	}
 
-										const char ** desc;
-											for (desc = thing->description; *desc; desc++) {
-															printf("- %s\n", *desc);
-																}
+	const char ** desc;
+	for (desc = thing->description; *desc; desc++) {
+		printf("- %s\n", *desc);
+	}
 
-												puts("");
+	puts("");
 }
 
 int main(int argc, char ** argv) {
 
-			school_t ** s;
-				job_t ** j;
-					project_t ** p;
+	school_t ** s;
+	job_t ** j;
+	project_t ** p;
 
-						printf("%s\n%s\n%s\n\n", name, email, address);
+	printf("%s\n%s\n%s\n\n", name, email, address);
 
-							puts("Education\n");
-								for (s = schools; *s; s++) {
-												print_thing(*s);
-													}
+	puts("Education\n");
+	for (s = schools; *s; s++) {
+		print_thing(*s);
+	}
 
-									puts("Employment\n");
-										for (j = jobs; *j; j++) {
-														print_thing(*j);
-															}
+	puts("Employment\n");
+	for (j = jobs; *j; j++) {
+		print_thing(*j);
+	}
 
-											puts("Projects\n");
-												for (p = projects; *p; p++) {
-																print_thing(*p);
-																	}
+	puts("Projects\n");
+	for (p = projects; *p; p++) {
+					print_thing(*p);
+	}
 
-													return 0;
+	return 0;
 }
