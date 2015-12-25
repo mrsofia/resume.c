@@ -3,23 +3,23 @@
 
 typedef struct {
 	union {
-		const char * company;
-		const char * school;
-		const char * project;
+		const char *company;
+		const char *school;
+		const char *project;
 	};
 	union {
-		const char * location;
-		const char * url;
+		const char *location;
+		const char *url;
 	};
 	union {
-		const char * title;
-		const char * program;
+		const char *title;
+		const char *program;
 	};
 
 	time_t started;
 	time_t left;
 
-	const char * description[];
+	const char *description[];
 
 } thing_t;
 
@@ -30,9 +30,9 @@ typedef thing_t project_t;
 #define CURRENT 0 /* I wasn't alive at the Unix epoch, so that'll work */
 
 /* Contact Information */
-const char * name    = "Justin D. Sofia";
-const char * email   = "justin.sofia@gmail.com";
-const char * address = "3111 Parker Ln, Apt 188\n"
+const char *name    = "Justin D. Sofia";
+const char *email   = "justin.sofia@gmail.com";
+const char *address = "3111 Parker Ln, Apt 188\n"
                        "Austin, TX 78741";
 
 /* Education */
@@ -48,7 +48,7 @@ school_t ut = {
 	}
 };
 
-school_t * schools[] = {
+school_t *schools[] = {
 	&ut,
 	NULL
 };
@@ -78,7 +78,7 @@ project_t jdos = {
 	}
 };
 
-project_t * projects[] = {
+project_t *projects[] = {
 	&connect_four_AI,
 	&jdos,
 	NULL
@@ -114,16 +114,16 @@ job_t capital_factory = {
 	}
 };
 
-job_t * jobs[] = {
+job_t *jobs[] = {
 	&dimeSocial,
 	&capital_factory,
 	NULL
 };
 
-void print_thing(thing_t * thing) {
+void print_thing(thing_t *thing) {
 	char started[100];
 	char left[100];
-	struct tm * ti;
+	struct tm *ti;
 
 	printf("%s at %s - %s\n", thing->title, thing->company, thing->location);
 
@@ -138,7 +138,7 @@ void print_thing(thing_t * thing) {
 	printf("%s to %s\n", started, left);
 	}
 
-	const char ** desc;
+	const char **desc;
 	for (desc = thing->description; *desc; desc++) {
 		printf("- %s\n", *desc);
 	}
@@ -146,11 +146,11 @@ void print_thing(thing_t * thing) {
 	puts("");
 }
 
-int main(int argc, char ** argv) {
+int main(int argc, char **argv) {
 
-	school_t ** s;
-	job_t ** j;
-	project_t ** p;
+	school_t **s;
+	job_t **j;
+	project_t **p;
 
 	printf("%s\n%s\n%s\n\n", name, email, address);
 
