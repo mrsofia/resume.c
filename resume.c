@@ -2,24 +2,25 @@
 #include <time.h>
 
 typedef struct {
-			union {
-							const char * company;
-									const char * school;
-											const char * project;
-												};
-				union {
-								const char * location;
-										const char * url;
-											};
-					union {
-									const char * title;
-											const char * program;
-												};
+	union {
+		const char * company;
+		const char * school;
+		const char * project;
+	};
+	union {
+		const char * location;
+		const char * url;
+	};
+	union {
+		const char * title;
+		const char * program;
+	};
 
-						time_t started;
-							time_t left;
+	time_t started;
+	time_t left;
 
-								const char * description[];
+	const char * description[];
+
 } thing_t;
 
 typedef thing_t job_t;
@@ -36,20 +37,20 @@ const char * address = "3111 Parker Ln, Apt 188\n"
 
 /* Education */
 school_t ut = {
-   	.school   = "The University of Texas at Austin",
-		.location = "Austin, TX",
-			.program  = "BBA Finance",
-				.started  = 1314248400,
-					.left     = 1431234000,
-						.description = {
-										"Minor studies in Computer Science",
-														NULL
-																	}
+	.school   = "The University of Texas at Austin",
+	.location = "Austin, TX",
+	.program  = "BBA Finance",
+	.started  = 1314248400,
+	.left     = 1431234000,
+	.description = {
+		"Minor studies in Computer Science",
+		NULL
+	}
 };
 
 school_t * schools[] = {
 	&ut,
-		NULL
+	NULL
 };
 
 /* Projects */
