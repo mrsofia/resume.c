@@ -166,7 +166,7 @@ int main(int argc, char ** argv) {
 
 	puts("Projects\n");
 	for (p = projects; *p; p++) {
-					print_thing(*p);
+		print_thing(*p);
 	}
 
 	return 0;
