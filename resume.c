@@ -66,21 +66,21 @@ project_t connect_four_AI = {
 	}
 };
 
-project_t jdos = {
-	.project = "jdOS",
+project_t shannonsmouse = {
+	.project = "Shannon's Mouse",
 	.url     = "not yet public",
 	.title   = "Lead",
 	.started = 1449036000,
 	.left    = CURRENT,
 	.description = {
-		"x64 Unix-like OS as platform for learning operating system concepts",
+		"A browser-based spin on Claude Shannon's legendary mouse: https://www.youtube.com/watch?v=vPKkXibQXGA",
 		NULL
 	}
 };
 
 project_t *projects[] = {
 	&connect_four_AI,
-	&jdos,
+	&shannonsmouse,
 	NULL
 };
 
