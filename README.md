@@ -6,7 +6,7 @@ To see it:
 
 First, clone the repo. 
 
-Make sure you have a C compiler installed and ready to go. On a Mac or Unix-like system this should be `gcc` or `cc`.
+Make sure you have a C compiler installed and ready to go. The compiler used in my Makefile is `cc`, so make sure you have that, and feel free to change the makefile to suit your setup.
 
 Then run:
 
